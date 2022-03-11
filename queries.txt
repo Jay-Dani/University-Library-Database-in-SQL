@@ -1,0 +1,8 @@
+Queries:
+
+
+1)select a.roll_no, a.fname, a.semail, b.issue_date,b.return_date,b.due_date,round(b.return_date-b.due_date)*2 as fine from student a , fine b where( a.roll_no=b.roll_no and round(b.return_date-b.due_date) >= 0) order by roll_no asc;
+2)select roll_no, sum(round(return_date-due_date)*2)as total_fine from fine where (round(return_date-due_date)>=0) group by roll_no order by roll_no;
+3)select b.roll_no, a.book_id, a.book_name, b.issue_id, b.issue_date from books a, issue_status b where a.book_id=b.book_id order by roll_no;
+4)update books set a_copies=a_copies-1 where( a_copies>0 and book_id=1001);
+5)update books set a_copies=a_copies+1 where( a_copies>0 and book_id=1001);
